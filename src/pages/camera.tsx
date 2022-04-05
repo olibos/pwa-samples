@@ -35,13 +35,14 @@ export default function Camera()
         const file = e.target.files[0];
         const url = URL.createObjectURL(file);
         const img = image.current;
-        img.addEventListener('load', () => 
+        const resolutionImage = new Image();
+        resolutionImage.addEventListener('load', () => 
         {
           //URL.revokeObjectURL(url)
-          setResolution([img.width, img.height]);
+          setResolution([resolutionImage.width, resolutionImage.height]);
         }, {once: true});
-        img.src = url;
-
+        
+        resolutionImage.src = img.src = url;
     }
 
     const builtIn = useRef<HTMLInputElement>();
