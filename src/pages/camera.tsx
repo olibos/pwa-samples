@@ -12,13 +12,17 @@ export default function Camera()
     const [resolution, setResolution] = useState<number[]>()
     async function capture()
     {
+      try{
         const picture = image.current;
-        const mediaStream = await navigator.mediaDevices.getUserMedia({video: {width:{ideal:4000},height:{ideal:4000}}});
+        const mediaStream = await navigator.mediaDevices.getUserMedia({video: {width:{ideal:2000},height:{ideal:2000}}});
+        /*
+        
+         */
         const track = mediaStream.getVideoTracks()[0];
         const capabilities = track.getCapabilities();
-        //const {width:{max: imageWidth}, height:{max: imageHeight}} = capabilities;
-        const imageCapture = new ImageCapture(track);
-        const {imageWidth:{max:imageWidth}, imageHeight:{max:imageHeight}} = await imageCapture.getPhotoCapabilities();
+        const {width:{max: imageWidth}, height:{max: imageHeight}} = capabilities;
+         const imageCapture = new ImageCapture(track);
+        // const {imageWidth:{max:imageWidth}, imageHeight:{max:imageHeight}} = await imageCapture.getPhotoCapabilities();
         //const {imageWidth, imageHeight} = await imageCapture.getPhotoSettings();
         setResolution([imageWidth, imageHeight]);
         const photo = await imageCapture.takePhoto();
@@ -26,8 +30,13 @@ export default function Camera()
         console.info("Media", {mediaStream, track, capabilities, imageCapture});
         picture.style.display = "block";
         picture.src = url;
-        //picture.addEventListener('load', () => URL.revokeObjectURL(url), {once: true});
+        picture.addEventListener('load', () => URL.revokeObjectURL(url), {once: true});
         video.current.srcObject = mediaStream;
+        video.current.addEventListener('error', e => console.error('Error', e))
+      }catch(e)
+      {
+        console.error('Error', e);
+      }
     }
 
     function show(e:React.ChangeEvent<HTMLInputElement>)
