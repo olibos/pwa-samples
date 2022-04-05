@@ -26,7 +26,7 @@ export default function Camera()
         console.info("Media", {mediaStream, track, capabilities, imageCapture});
         picture.style.display = "block";
         picture.src = url;
-        picture.addEventListener('load', () => URL.revokeObjectURL(url), {once: true});
+        //picture.addEventListener('load', () => URL.revokeObjectURL(url), {once: true});
         video.current.srcObject = mediaStream;
     }
 
@@ -37,7 +37,7 @@ export default function Camera()
         const img = image.current;
         img.addEventListener('load', () => 
         {
-          URL.revokeObjectURL(url)
+          //URL.revokeObjectURL(url)
           setResolution([img.width, img.height]);
         }, {once: true});
         img.src = url;
