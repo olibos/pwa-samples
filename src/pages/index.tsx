@@ -26,6 +26,11 @@ export default function Samples()
                                 <a>Mobile detection</a>
                             </Link>
                         </li>
+                        <li>
+                            <Link href="/serial">
+                                <a>Serial port (and serial over bluetooth)</a>
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </fieldset>

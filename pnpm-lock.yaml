@@ -5,6 +5,7 @@ specifiers:
   '@types/react': ^17.0.39
   '@types/react-dom': ^17.0.11
   '@types/w3c-image-capture': ^1.0.5
+  '@types/w3c-web-serial': ^1.0.2
   next: ^12.1.0
   react: ^17.0.2
   react-dom: ^17.0.2
@@ -17,6 +18,7 @@ devDependencies:
   '@types/react': 17.0.39
   '@types/react-dom': 17.0.11
   '@types/w3c-image-capture': 1.0.5
+  '@types/w3c-web-serial': 1.0.2
   next: 12.1.0_7c7259c9157ca907edb10a72e441b779
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -159,6 +161,10 @@ packages:
     resolution: {integrity: sha512-MzkDgLz8bJLzxMlPJYoIQbuFdbYzydlr1DQ3jPcqEZhEWBACxsqvrUB99CegClXCxoTs2BDDdbuvAPOZ/zec1g==}
     dependencies:
       '@types/webrtc': 0.0.31
+    dev: true
+
+  /@types/w3c-web-serial/1.0.2:
+    resolution: {integrity: sha512-Ftx4BtLxgAnel7V7GbHylCYjSq827A+jeEE3SnTS7huCGUN0pSwUn+CchTCT9TkZj9w+NVMUq4Bk2R0GvUNmAQ==}
     dev: true
 
   /@types/webrtc/0.0.31:

@@ -20,7 +20,8 @@
     "jsx": "preserve",
     "types": [
       "./node_modules/user-agent-data-types",
-      "./node_modules/@types/w3c-image-capture"
+      "./node_modules/@types/w3c-image-capture",
+      "./node_modules/@types/w3c-web-serial"
   ]
   },
   "include": [
